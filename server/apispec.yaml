@@ -1,0 +1,46 @@
+openapi: "3.0.2"
+info:
+  version: "1.0"
+  title: Welcome to the Grade Scale API!
+  description: This API allows users to view the grade scale
+servers:
+  - url: "http://localhost:5001/api"
+    description: Development server
+paths:
+  /grade-scale:
+    get:
+      summary: Returns the grade scale
+      description: Get the grade scale
+      operationId: get-grade-scale
+      tags:
+        - grade-scale
+      
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Grade:
+      type: object
+      properties:
+        level:
+          type: string
+      required:
+        - level
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+tags:
+  - name: grade-scale
