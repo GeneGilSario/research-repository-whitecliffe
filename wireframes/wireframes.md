@@ -2,4 +2,10 @@
 
 <!-- TODO: Add wireframe -->
 
-![img](./wireframe.jpg)
+## Mobile Design
+
+![img](./Mobile-Design.png)
+
+## Desktop Design
+
+![img](./Desktop-Design.png)
