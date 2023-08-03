@@ -25,7 +25,7 @@ const getLetterGrade = (gradeScale, mark, level) => {
     );
   });
 
-  // this chekcs if a matching `gradeEntry` was found
+  // this checks if a matching `gradeEntry` was found
   if (gradeEntry) {
     // if found, this line returns the `grade` property of that entry
     return gradeEntry.grade;
