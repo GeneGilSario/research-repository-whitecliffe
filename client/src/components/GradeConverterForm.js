@@ -5,7 +5,7 @@ import "./GradeConverterForm.css";
 
 const GradeConverterForm = ({ gradeScale }) => {
   const [level, setLevel] = useState("Level 5");
-  const [mark, setMark] = useState(0);
+  const [mark, setMark] = useState();
   const [grade, setGrade] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -48,6 +48,7 @@ const GradeConverterForm = ({ gradeScale }) => {
           id="mark"
           type="number"
           value={mark}
+          placeholder="Please enter Mark"
           onChange={(e) => {
             setGrade("");
             setMark(Number(e.target.value));
