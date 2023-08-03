@@ -6,13 +6,18 @@ router.get("/", async (req, res, next) => {
   try {
     const result = await db.query(
       `SELECT
-        level
+        level,
+        min_mark,
+        max_mark,
+        grade
       FROM grade_scale 
       ORDER BY
         id
       `
     );
+
     const gradeScale = result.rows;
+
     return res.json(gradeScale);
   } catch (err) {
     next(err);
