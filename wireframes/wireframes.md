@@ -4,8 +4,12 @@
 
 ## Mobile Design
 
-![img](./Mobile-Design.png)
+![img](./MobileDesign.png)
 
 ## Desktop Design
 
-![img](./Desktop-Design.png)
+![img](./DesktopDesign.png)
+
+## Unhappy Design
+
+![img](./UnhappyDesign.png)
