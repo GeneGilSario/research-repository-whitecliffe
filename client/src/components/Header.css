@@ -1,0 +1,18 @@
+.header {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.border-line {
+  border-width: 0.1rem;
+  border-color: black;
+  border-style: solid;
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .border-line {
+    border: none;
+    margin: 0;
+  }
+}

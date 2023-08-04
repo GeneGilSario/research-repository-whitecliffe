@@ -22,40 +22,59 @@ const GradeConverterForm = ({ gradeScale }) => {
 
   return (
     <>
-      {errorMessage && <ErrorMessage message={errorMessage} />}
-      {grade && (
-        <p>
-          The grade for mark {mark} at {level} is {grade}.
-        </p>
-      )}
       <form className="mainForm" onSubmit={handleSubmit}>
-        <label htmlFor="level">Level</label>
-        <select
-          className="mainFormSelect"
-          id="level"
-          value={level}
-          onChange={(e) => {
-            setGrade("");
-            setLevel(e.target.value);
-          }}
-        >
-          <option value="Level 5">Level 5</option>
-          <option value="Level 6">Level 6</option>
-        </select>
-        <label htmlFor="mark">Mark</label>
-        <input
-          className="mainFormNumber"
-          id="mark"
-          type="number"
-          value={mark}
-          placeholder="Please enter Mark"
-          onChange={(e) => {
-            setGrade("");
-            setMark(Number(e.target.value));
-          }}
-        />
+        <div className="gradeSpace">
+          <div className="lableSpace">
+            <label className="mainLevel" htmlFor="level">
+              Level:
+            </label>
+          </div>
+          <select
+            className="mainFormSelect"
+            id="level"
+            value={level}
+            onChange={(e) => {
+              setGrade("");
+              setLevel(e.target.value);
+            }}
+          >
+            <option value="Level 5" className="Level-5">
+              Level 5
+            </option>
+            <option value="Level 6">Level 6</option>
+          </select>
+        </div>
+        <div className="gradeSpace">
+          <div className="lableSpace">
+            <label className="mainMark" htmlFor="mark">
+              Mark:
+            </label>
+          </div>
+          <input
+            className="mainFormNumber"
+            id="mark"
+            type="number"
+            value={mark}
+            placeholder="Please enter the mark"
+            onChange={(e) => {
+              setGrade("");
+              setMark(Number(e.target.value));
+            }}
+          />
+        </div>
         <button className="mainFormButton">Get Grade</button>
       </form>
+      <div className="errorMessage">
+        {errorMessage && <ErrorMessage message={errorMessage} />}
+      </div>
+      {grade && (
+        <div>
+          <p className="paraGrade">
+            The grade for mark {mark} at {level} is
+          </p>
+          <h1 className="grade">{grade}</h1>
+        </div>
+      )}
     </>
   );
 };
