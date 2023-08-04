@@ -4,3 +4,14 @@
   padding-right: 2rem;
   box-sizing: content-box;
 }
+
+@media screen and (min-width: 48rem) {
+  .app {
+    max-width: 35rem;
+    margin: 0 auto;
+    margin-top: 15rem;
+    padding: 2rem 3rem 0rem 3rem;
+    border: 3px solid #d8d9da;
+    background-color: whitesmoke;
+  }
+}

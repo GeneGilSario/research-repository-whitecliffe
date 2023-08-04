@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import GradeConverterForm from "./GradeConverterForm";
 import Loader from "./Loader";
 import ErrorMessage from "./ErrorMessage";
+import "./GradesPage.css";
 
 const GradesPage = () => {
   const [loading, setLoading] = useState(false);
@@ -45,7 +46,7 @@ const GradesPage = () => {
   }, []);
 
   return (
-    <main>
+    <main className="main">
       {loading && <Loader />}
       {error && <ErrorMessage message="Error fetching grade scale" />}
       <GradeConverterForm gradeScale={gradeScale} />
