@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  version: '1.0'
+  version: "1.0"
   title: Welcome to the Grade Scale API!
   description: This API allows users to view the grade
   contact:
@@ -8,10 +8,10 @@ info:
     email: gene.sario@developersinstitute.co.nz
     url: www.mywebsite.com
   license:
-    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
     name: Apache 2.0
 servers:
-  - url: 'http://localhost:5001/api'
+  - url: "http://localhost:5001/api"
     description: Development server
 paths:
   /grade-scale:
@@ -22,27 +22,27 @@ paths:
       description: Get the grade scale
       operationId: get-grade-scale
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Grade'
+                $ref: "#/components/schemas/Grade"
               examples:
                 default:
                   value:
-                    level: Level 5
-                    min_mark: 90
-                    max_mark: 100
-                    grade: A+
-        '500':
+                    - level: Level 5
+                      min_mark: 90
+                      max_mark: 100
+                      grade: A+
+        "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: "#/components/schemas/Error"
       servers:
-        - url: 'http://localhost:5001/api'
+        - url: "http://localhost:5001/api"
           description: Development server
 tags:
   - name: grade-scale
@@ -50,21 +50,23 @@ tags:
 components:
   schemas:
     Grade:
-      type: object
-      properties:
-        level:
-          type: string
-        min_mark:
-          type: integer
-        max_mark:
-          type: integer
-        grade:
-          type: string
-      required:
-        - level
-        - min_mark
-        - max_mark
-        - grade
+      type: array
+      items:
+        type: object
+        properties:
+          level:
+            type: string
+          min_mark:
+            type: integer
+          max_mark:
+            type: integer
+          grade:
+            type: string
+        required:
+          - level
+          - min_mark
+          - max_mark
+          - grade
     Error:
       type: object
       properties:
