@@ -144,6 +144,11 @@ describe("getLetterGrade", () => {
       [54, "Level 6", "C-"],
       [95, "Level 6", "A+"],
       [40, "Level 6", "D"],
+      [62, "Level 5", "C+"],
+      [40, "Level 5", "D"],
+      [54, "Level 5", "C-"],
+      [79, "Level 6", "B+"],
+      [55, "Level 5", "C"],
     ])(
       "Returns correct grade for valid mark %p at %p",
       (mark, level, expectedGrade) => {
